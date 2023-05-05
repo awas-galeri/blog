@@ -102,14 +102,16 @@
                             </a> --}}
                         </h6>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('dashboard') }}">
-                                <span data-feather="home" class="align-text-bottom"></span>
+                            <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page"
+                                href="{{ route('dashboard') }}">
+                                <span data-feather="layout" class="align-text-bottom"></span>
                                 Dashboard
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file" class="align-text-bottom"></span>
+                            <a class="nav-link {{ Request::is('blog') ? 'active' : '' }}"
+                                href="{{ route('dashboard.blog') }}">
+                                <span data-feather="file-text" class="align-text-bottom"></span>
                                 Blog
                             </a>
                         </li>
