@@ -28,10 +28,10 @@ class AuthController extends Controller
         if (auth()->attempt($data)) {
             User::where('email', $request->username)->first();
             return redirect('/dashboard');
-        } else {
-            Session::flash('error', 'Email atau Password salah!');
-            return redirect('/login');
         }
+
+        Session::flash('error', 'Email atau Password salah!');
+        return redirect('/login');
     }
 
     public function register()
