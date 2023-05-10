@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 
@@ -36,8 +37,13 @@ Route::middleware('guest')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::prefix('/')->controller(DashboardController::class)->group(function () {
         Route::get('/dashboard', 'index')->name('dashboard');
-        Route::get('/blog', 'blog')->name('dashboard.blog');
     });
+
+    Route::prefix('/')->controller(BlogController::class)->group(function () {
+        Route::get('/blog', 'index')->name('blog');
+        Route::get('/blog/create', 'create')->name('blog.create');
+    });
+
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

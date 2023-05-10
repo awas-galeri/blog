@@ -109,8 +109,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('blog') ? 'active' : '' }}"
-                                href="{{ route('dashboard.blog') }}">
+                            <a class="nav-link {{ Request::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}">
                                 <span data-feather="file-text" class="align-text-bottom"></span>
                                 Blog
                             </a>

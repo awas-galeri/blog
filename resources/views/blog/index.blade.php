@@ -23,29 +23,26 @@
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Header</th>
-                        <th scope="col">Header</th>
-                        <th scope="col">Header</th>
-                        <th scope="col">Header</th>
+                        <th scope="col">No.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Excerpt</th>
+                        <th scope="col">Body</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>1,001</td>
-                        <td>random</td>
-                        <td>data</td>
-                        <td>placeholder</td>
-                        <td>text</td>
-                    </tr>
-                    <tr>
-                        <td>1,001</td>
-                        <td>random</td>
-                        <td>data</td>
-                        <td>placeholder</td>
-                        <td>text</td>
-                    </tr>
-                </tbody>
+                @foreach ($blog as $b)
+                    <tbody>
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $b->title }}</td>
+                            <td>{{ $b->excerpt }}</td>
+                            <td style="width: 45%">{{ $b->body }}</td>
+                            <td>
+                                <a href="">Edit</a> | <a href="">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                @endforeach
             </table>
         </div>
     </main>
