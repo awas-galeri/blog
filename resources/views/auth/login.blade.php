@@ -9,6 +9,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,600,0,0" />
     <title>Xtra Blog | Login</title>
+    <link rel="icon" type="image/x-icon" href="/loggo.ico" />
 </head>
 
 <body>

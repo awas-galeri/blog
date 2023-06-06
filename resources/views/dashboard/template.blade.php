@@ -9,6 +9,9 @@
     <meta name="generator" content="Hugo 0.104.2">
     <title>Xtra Blog | Dashboard</title>
 
+    {{-- <link rel="shortcut icon" href="{{ url('/asset2/img/loggo.png') }}" type="image/x-icon"> --}}
+    <link rel="icon" type="image/x-icon" href="/loggo.ico" />
+
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
 
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -69,6 +72,9 @@
 
     <!-- Custom styles for this template -->
     <link href="asset3/dashboard.css" rel="stylesheet">
+
+    @yield('css')
+
 </head>
 
 <body>
@@ -91,96 +97,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3 sidebar-sticky">
-                    <ul class="nav flex-column">
-                        <h6
-                            class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-                            <span>Main Menu</span>
-                            {{-- <a class="link-secondary" href="#" aria-label="Add a new report">
-                                <span data-feather="plus-circle" class="align-text-bottom"></span>
-                            </a> --}}
-                        </h6>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page"
-                                href="{{ route('dashboard') }}">
-                                <span data-feather="layout" class="align-text-bottom"></span>
-                                Dashboard
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link {{ Request::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Blog
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                                Products
-                            </a>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="user" class="align-text-bottom"></span>
-                                Profile
-                            </a>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-                                Reports
-                            </a>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="layers" class="align-text-bottom"></span>
-                                Integrations
-                            </a>
-                        </li> --}}
-                    </ul>
-
-                    <h6
-                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
-                        <span>Options</span>
-                        {{-- <a class="link-secondary" href="#" aria-label="Add a new report">
-                            <span data-feather="plus-circle" class="align-text-bottom"></span>
-                        </a> --}}
-                    </h6>
-                    <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="user" class="align-text-bottom"></span>
-                                Profile
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="settings" class="align-text-bottom"></span>
-                                Settings
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}">
-                                <span data-feather="log-out" class="align-text-bottom"></span>
-                                Log out
-                            </a>
-                        </li>
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Social engagement
-                            </a>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text" class="align-text-bottom"></span>
-                                Year-end sale
-                            </a>
-                        </li> --}}
-                    </ul>
-                </div>
-            </nav>
+            @include('dashboard.navbar')
 
             @yield('body')
         </div>
@@ -189,6 +106,9 @@
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
     </script>
@@ -196,6 +116,8 @@
         integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
     </script>
     <script src="asset3/dashboard.js"></script>
+
+    @yield('js')
 </body>
 
 </html>

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/blog/create', 'create')->name('blog.create');
     });
 
+    Route::prefix('/profile')->controller(ProfileController::class)->group(function () {
+        Route::get('/', 'index')->name('profile');
+        Route::post('/store', 'store')->name('profile.store');
+    });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -64,6 +69,6 @@ Route::middleware('auth')->group(function () {
 
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/home', function () {
+    return view('welcome');
+});
