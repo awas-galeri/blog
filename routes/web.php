@@ -6,6 +6,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SettingController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,8 +38,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::prefix('/')->controller(DashboardController::class)->group(function () {
-        Route::get('/dashboard', 'index')->name('dashboard');
+    Route::prefix('/dashboard')->controller(DashboardController::class)->group(function () {
+        Route::get('/', 'index')->name('dashboard');
     });
 
     Route::prefix('/')->controller(BlogController::class)->group(function () {
@@ -48,6 +50,11 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/profile')->controller(ProfileController::class)->group(function () {
         Route::get('/', 'index')->name('profile');
         Route::post('/store', 'store')->name('profile.store');
+    });
+
+    Route::prefix('/setting')->controller(SettingController::class)->group(function () {
+        Route::get('/', 'index')->name('setting');
+        Route::post('/store', 'store')->name('setting.store');
     });
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');

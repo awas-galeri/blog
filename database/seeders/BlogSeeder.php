@@ -21,6 +21,6 @@ class BlogSeeder extends Seeder
         //     'body' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet ullam magni similique vero atque. Ex culpa repudiandae assumenda tempora nam velit non corporis, fugit repellat molestias, animi at sit qui!'
         // ]);
 
-        Blog::factory(5)->create();
+        Blog::factory(10)->create();
     }
 }

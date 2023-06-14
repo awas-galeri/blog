@@ -9,14 +9,14 @@
                 </a> --}}
             </h6>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" aria-current="page"
+                <a class="nav-link {{ Request::is('dashboard*') ? 'active' : '' }}" aria-current="page"
                     href="{{ route('dashboard') }}">
                     <span data-feather="layout" class="align-text-bottom"></span>
                     Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('blog') ? 'active' : '' }}" href="{{ route('blog') }}">
+                <a class="nav-link {{ Request::is('blog*') ? 'active' : '' }}" href="{{ route('blog') }}">
                     <span data-feather="file-text" class="align-text-bottom"></span>
                     Blog
                 </a>
@@ -56,13 +56,13 @@
         </h6>
         <ul class="nav flex-column mb-2">
             <li class="nav-item">
-                <a class="nav-link {{ Request::is('profile') ? 'active' : '' }}" href="{{ route('profile') }}">
+                <a class="nav-link {{ Request::is('profile*') ? 'active' : '' }}" href="{{ route('profile') }}">
                     <span data-feather="user" class="align-text-bottom"></span>
                     Profile
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Request::is('setting*') ? 'active' : '' }}" href="{{ route('setting') }}">
                     <span data-feather="settings" class="align-text-bottom"></span>
                     Settings
                 </a>
