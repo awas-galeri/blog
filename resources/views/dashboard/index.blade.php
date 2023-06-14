@@ -16,7 +16,7 @@
             </div> --}}
         </div>
 
-        <canvas class="my-4 w-100" id="myChart" width="900" height="350"></canvas>
+        <canvas class="my-4 w-100" id="myCharts" width="900" height="350"></canvas>
 
         {{-- <h2>Section title</h2> --}}
         {{-- <div class="table-responsive">
@@ -147,4 +147,41 @@
             </table>
         </div> --}}
     </main>
+@endsection
+
+@section('js')
+    <script>
+        const weeklyData = @json($weeklyDataSorted);
+
+        const labels = Object.keys(weeklyData);
+        const data = Object.values(weeklyData);
+
+        const ctx = document.getElementById('myCharts').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#007bff',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#007bff'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
 @endsection

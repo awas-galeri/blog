@@ -135,9 +135,9 @@
 @endsection
 
 @section('js')
-    {{-- <script src="{{ url('/api-daerah/js/api-daerah.js') }}"></script> --}}
-    <script src="https://cdn.jsdelivr.net/gh/davidaprilio/laravel-api-daerah@1.1.0/resources/js/api-daerah.js"
-        integrity="sha256-QQB5jg1gf2+7D7eYeh+4NTqbLxI+ePkyAL7MhHhEU9E=" crossorigin="anonymous"></script>
+    <script src="{{ url('/api-daerah/js/api-daerah.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/gh/davidaprilio/laravel-api-daerah@1.1.0/resources/js/api-daerah.min.js"
+    integrity="sha256-rtjJB11uLYvullhE6dGIutZ3A7sY3SJTj/c8Bn89Dzw=" crossorigin="anonymous"></script> --}}
 
     <script>
         const apiDaerah = new ApiDaerah({
